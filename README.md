@@ -161,13 +161,33 @@ docker-compose up -d
 ```bash
 docker ps
 ```
-- Acesse o container do banco de dados
+- Acesse o container
 ```bash
 docker exec -it appproduct bash
 ```
 - Iniciando go mod (gerenciador de dependências do Go)
 ```bash
 go mod init github.com/seu-usuario/seu-repositorio
+```
+
+- Criando um arquivo para o banco de dados sqlite
+```bash
+touch sqlite.db
+```
+
+- Acessando banco criado
+```bash
+sqlite3 sqlite.db
+```
+
+- Criando tabela
+```bash
+create table products(id string, name string, price float, status string);
+```
+
+- Consultando tabelas
+```bash
+.tables
 ```
 
 ## Unitários

@@ -169,3 +169,14 @@ docker exec -it appproduct bash
 ```bash
 go mod init github.com/seu-usuario/seu-repositorio
 ```
+
+## Unitários
+### Gerando mocks para simular classes externas
+- Acesse o container
+```bash
+docker exec -it appproduct bash
+```
+- Comando para geração dos mocks do módulo application e domínio product
+```bash
+mockgen -destination=application/mocks/application.go -source=application/product.go application
+```

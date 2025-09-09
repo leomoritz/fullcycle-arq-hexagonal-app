@@ -230,6 +230,23 @@ go run main.go cli -a=create -n="Product CLI" -p=25.0
 go run main.go cli -a=get --id=edc4f81d-55a9-4cc4-bdbd-80f92a6ae3b7
 ```
 
+## Executando webserver
+- Executando webserver
+```bash
+go run main.go http
+```
+
+- Exemplo Executando endpoint
+```bash
+curl http://localhost:8080/product/edc4f81d-55a9-4cc4-bdbd-80f92a6ae3b7
+```
+
+- Exemplo saída
+```log
+Webserver has been started
+[negroni] 2025-09-09T16:47:25Z | 200 |   749.537µs | localhost:8080 | GET /product/edc4f81d-55a9-4cc4-bdbd-80f92a6ae3b7
+```
+
 ## Unitários
 ### Gerando mocks para simular classes externas
 - Acesse o container

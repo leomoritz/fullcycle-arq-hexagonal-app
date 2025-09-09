@@ -190,6 +190,46 @@ create table products(id string, name string, price float, status string);
 .tables
 ```
 
+## Utilizando Comand Line Interface (CLI) do Cobra
+- Dentro do container, executar o comando abaixo
+```bash
+cobra-cli init
+```
+- Comando alternativo
+```bash
+cobra init --pkg-name=github.com/leomoritz/fullcycle-arq-hexagonal-app
+```
+
+- Com um dos comandos acima, ele deve criar uma pasta cmd com um arquivo root.go gerado e no diretório raiz ele deve criar um arquivo main.go. Caso algum arquivo não seja criado, provavelmente deve ser problema de permissão do WSL no diretório. Se for isso, basta executar o comando abaixo para dar a permissão e depois repetir um dos comandos acima do cobra:
+```bash
+sudo chmod -R 777 .
+```
+
+- Atualizar dependências
+```bash
+go mod tidy
+```
+
+- Criando o primeiro comand line:
+```bash
+cobra-cli add cli
+```
+
+- Executando o cli criado:
+```bash
+go run main.go cli
+```
+
+- Depois de implementado as variáveis e configurações de execução nos arquivos cmd/cli.go e cmd/root.go, basta executar os comandos abaixo para criar um novo produto:
+```bash
+go run main.go cli -a=create -n="Product CLI" -p=25.0
+```
+
+- Exemplo consultando pelo CLI:
+```bash
+go run main.go cli -a=get --id=edc4f81d-55a9-4cc4-bdbd-80f92a6ae3b7
+```
+
 ## Unitários
 ### Gerando mocks para simular classes externas
 - Acesse o container

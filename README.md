@@ -247,6 +247,8 @@ Webserver has been started
 [negroni] 2025-09-09T16:47:25Z | 200 |   749.537µs | localhost:8080 | GET /product/edc4f81d-55a9-4cc4-bdbd-80f92a6ae3b7
 ```
 
+- OBS: Para executar de fora do container, é necessário alterar a porta do server.go para 9000 e executar novamente o webserver
+
 ## Unitários
 ### Gerando mocks para simular classes externas
 - Acesse o container

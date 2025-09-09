@@ -70,6 +70,6 @@ func createProduct(service application.ProductServiceInterface) http.Handler {
 			response.Write(JsonError(err.Error()))
 			return
 		}
-		response.WriteHeader(http.StatusCreated)
+		response.WriteHeader(http.StatusOK)
 	})
 }

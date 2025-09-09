@@ -9,6 +9,7 @@ import (
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 
+	"github.com/leomoritz/fullcycle-arq-hexagonal-app/adapters/web/handler"
 	"github.com/leomoritz/fullcycle-arq-hexagonal-app/application"
 )
 
@@ -23,6 +24,9 @@ func MakeNewWebserver(service application.ProductServiceInterface) *Webserver {
 func (w Webserver) Serve() {
 	router := mux.NewRouter()
 	middleware := negroni.New(negroni.NewLogger())
+
+	handler.MakeProductHandlers(router, middleware, w.Service)
+	http.Handle("/", router)
 
 	server := &http.Server{
 		ReadHeaderTimeout: 10 * time.Second,

@@ -9,6 +9,10 @@ type ProductDto struct {
 	Status string  `json:"status"`
 }
 
+func NewProductDto() *ProductDto {
+	return &ProductDto{}
+}
+
 func (dto *ProductDto) Bind(product *application.Product) (*application.Product, error) {
 	if dto.ID != "" {
 		product.ID = dto.ID

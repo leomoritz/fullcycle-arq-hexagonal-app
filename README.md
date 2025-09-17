@@ -123,6 +123,8 @@
 - O hexágono é uma metáfora visual que representa os pontos de conexão entre o núcleo da aplicação e seus adaptadores externos.
 - O cliente fica no lado esquerdo (REST, CLI, GRPC, GraphQL, UI, etc) e o servidor no lado direito (DB, Redis, Filesystem, Lambda, API externa, etc).
 
+<img width="903" height="746" alt="image" src="https://github.com/user-attachments/assets/6b32fe9b-f464-4efd-a6fa-cfc21dfe97e8" />
+
 ### Características
 - Definição de limites e proteção nas regras da aplicação
 - Componentização e desacoplamento:
